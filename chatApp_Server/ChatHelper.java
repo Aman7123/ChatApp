@@ -14,7 +14,7 @@ import java.util.Set;
  */
 public class ChatHelper {
 	private Set<String> userName = new HashSet<>();
-	private Set<UserInstance> userThreads = new HashSet<>();
+	private Set<UserInstance> UserInstance = new HashSet<>();
 	private String ctM = String.valueOf(System.currentTimeMillis());
 	private File logFile = new File("." + "\\" + "ChatApp_logFile" + ctM + ".txt");
 
@@ -22,7 +22,7 @@ public class ChatHelper {
 	 * This method is responsible for sending messages to all users MINUS the sending user.
 	 */
 	public void broadcast(String message, UserInstance excludeUser) {
-		for (UserInstance user : userThreads) {
+		for (UserInstance user : UserInstance) {
 			if (user != excludeUser) {
 				user.sendMessage(message);
 			}
@@ -45,8 +45,8 @@ public class ChatHelper {
 	 */
 	public void removeUser(String userToRemove, UserInstance userLocation) {
 		if (userName.remove(userToRemove)) {
-			userThreads.remove(userLocation);
 			System.out.println("User: " + userToRemove + " has left the conversation.");
+			UserInstance.remove(userLocation);
 		}
 	}
 
@@ -76,7 +76,7 @@ public class ChatHelper {
 	 * @param newUser The userThread of the newly created user.
 	 */
 	public void UserThreadAdd(UserInstance newUser) {
-		this.userThreads.add(newUser);
+		this.UserInstance.add(newUser);
 	}
 	
 	public void logData(String stringToWrite) {
