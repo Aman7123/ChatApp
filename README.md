@@ -34,7 +34,7 @@ This project will most likely only receive this version which I'm listing as V-1
 
 ## Authors
 
-* **Aaron Renner** - *Initial concept work and Senior Developer* - [Aaron Renner](https://github.com/Aman7123)
+* **Aaron Renner** - *Initial concept work and Developer* - [Aaron Renner](https://github.com/Aman7123)
 
 ## License
 
